@@ -1,3 +1,10 @@
 MultipleWindow/bin/
 MultipleWindow/obj/
 packages/
+WindowsFormsApp1/bin/
+WindowsFormsApp1/obj/
+WindowsFormsApp2/bin/
+WindowsFormsApp2/obj/
+WindowsFormsApp3/bin/
+WindowsFormsApp3/obj/
+*.suo
