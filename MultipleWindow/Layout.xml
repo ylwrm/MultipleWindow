@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Ranges>
+    <Range
+      Name="R1"
+      DockState="DockBottom"
+      Pane=""
+      DockAlignment="Right"
+      Proportion="0"
+    
+      Cmd="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+      CmdArg="C:\Users\Jerry\Desktop\dist\index.html"
+      ClassName="Chrome_WidgetWin_1"
+      HideRootWindowClassName=""
+    >
+    </Range>
+    <Range
+      Name="R1.1"
+      DockState="Unknown"
+      Pane="R1"
+      DockAlignment="Right"
+      Proportion="0.5"
+    
+      Cmd="C:\Program Files\Internet Explorer\iexplore.exe"
+      CmdArg=""
+      ClassName="Internet Explorer_Server"
+      HideRootWindowClassName=""
+    >
+    </Range>
+    <Range
+      Name="R2"
+      DockState="DockRight"
+      Pane=""
+      DockAlignment="Right"
+      Proportion="0"
+    
+      Cmd="C:\Program Files\Microsoft Office\Office15\EXCEL.EXE"
+      CmdArg="C:\Users\Jerry\Desktop\XXX.xlsx"
+      ClassName="EXCEL7"
+      HideRootWindowClassName="XLMAIN"
+    >
+    </Range>
+  </Ranges>
+</Layout>
