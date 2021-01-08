@@ -8,9 +8,9 @@
       DockAlignment="Right"
       Proportion="0"
     
-      Cmd="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-      CmdArg="C:\Users\Jerry\Desktop\dist\index.html"
-      ClassName="Chrome_WidgetWin_1"
+      Cmd="WindowsFormsApp1.exe"
+      CmdArg=""
+      ClassName="WindowsForms10.BUTTON.app.0.141b42a_r28_ad1"
       HideRootWindowClassName=""
     >
     </Range>
@@ -21,9 +21,9 @@
       DockAlignment="Right"
       Proportion="0.5"
     
-      Cmd="C:\Program Files\Internet Explorer\iexplore.exe"
+      Cmd="WindowsFormsApp2.exe"
       CmdArg=""
-      ClassName="Internet Explorer_Server"
+      ClassName="WindowsForms10.SysMonthCal32.app.0.141b42a_r14_ad1"
       HideRootWindowClassName=""
     >
     </Range>
@@ -34,10 +34,10 @@
       DockAlignment="Right"
       Proportion="0"
     
-      Cmd="C:\Program Files\Microsoft Office\Office15\EXCEL.EXE"
-      CmdArg="C:\Users\Jerry\Desktop\XXX.xlsx"
-      ClassName="EXCEL7"
-      HideRootWindowClassName="XLMAIN"
+      Cmd="WindowsFormsApp3.exe"
+      CmdArg=""
+      ClassName="WindowsForms10.SysTreeView32.app.0.141b42a_r14_ad1"
+      HideRootWindowClassName=""
     >
     </Range>
   </Ranges>
