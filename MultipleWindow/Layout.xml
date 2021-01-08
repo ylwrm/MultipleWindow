@@ -11,6 +11,11 @@
       ClassName="WindowsForms10.BUTTON.app"
       HideRootWindowClassName="WindowsForms10.Window.8.app"
       HideRootWindowText="Form1"
+      
+      overtop="30"
+      overbottom="8"
+      overleft="8"
+      overright="8"
     >
     </Range>
     <Range

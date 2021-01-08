@@ -68,7 +68,11 @@ namespace MultipleWindow
                                 range.CmdArg,
                                 range.ClassName,
                                 range.HideRootWindowClassName,
-                                range.HideRootWindowText);
+                                range.HideRootWindowText,
+                                range.overtop,
+                                range.overbottom,
+                                range.overleft,
+                                range.overright);
                             dockWindow4.Text = range.Name;
                             dockWindow4.Show(dockPanel1, dockState);
                             windows.Add(range.Name, dockWindow4);
@@ -82,7 +86,11 @@ namespace MultipleWindow
                                     range.CmdArg,
                                     range.ClassName,
                                     range.HideRootWindowClassName,
-                                    range.HideRootWindowText);
+                                    range.HideRootWindowText,
+                                    range.overtop,
+                                    range.overbottom,
+                                    range.overleft,
+                                    range.overright);
                                 dockWindow.Text = range.Name;
                                 if (range.Proportion == 0)
                                 {
@@ -107,52 +115,6 @@ namespace MultipleWindow
             {
 
             }
-
-            /*
-
-            dockPanel1.DockLeftPortion = 0.5;
-            dockPanel1.DockRightPortion = 0.5;
-            //DockWindow dockWindow1 = new DockWindow(@"C:\Program Files\Microsoft Office\Office15\WINWORD.EXE", "", @"OpusApp", "MsoSplash");
-            DockWindow dockWindow1 = new DockWindow(
-                @"C:\Program Files\Microsoft Office\Office15\WINWORD.EXE",
-                @"C:\Users\Jerry\Desktop\蚌埠吉的堡天之星幼儿居家身体情况统计表.docx",
-                @"_WwG",
-                @"OpusApp");
-            dockWindow1.Text = "AAA";
-            dockWindow1.Show(dockPanel1, DockState.DockLeft);
-
-
-            DockWindow dockWindow3 = new DockWindow(
-                @"C:\Program Files\Internet Explorer\iexplore.exe",
-                @"",
-                @"Internet Explorer_Server",
-                @"");
-            dockWindow3.Text = "CCC";
-            dockWindow3.Show(dockPanel1, DockState.DockRight);
-
-
-            //DockWindow dockWindow2 = new DockWindow(@"C:\Program Files\Microsoft Office\Office15\EXCEL.EXE", "", @"FullpageUIHost", "MsoSplash");
-            DockWindow dockWindow2 = new DockWindow(
-                @"C:\Program Files\Microsoft Office\Office15\EXCEL.EXE",
-                @"C:\Users\Jerry\Desktop\XXX.xlsx",
-                @"EXCEL7",
-                @"XLMAIN");
-            dockWindow2.Text = "BBB";
-            dockWindow2.Show(dockPanel1, DockState.DockBottom);
-            dockWindow2.Show(dockWindow3.Pane, DockAlignment.Left, 0.5);
-
-
-            //DockWindow dockWindow2 = new DockWindow(@"C:\Program Files\Microsoft Office\Office15\EXCEL.EXE", "", @"FullpageUIHost", "MsoSplash");
-            DockWindow dockWindow4 = new DockWindow(
-                @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-                @"C:\Users\Jerry\Desktop\dist\index.html",
-                @"Chrome_WidgetWin_1",
-                @"");
-            dockWindow4.Text = "TTT";
-            dockWindow4.Show(dockPanel1, DockState.DockTop);
-
-
-            */
         }
     }
 }

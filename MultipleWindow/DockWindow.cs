@@ -22,6 +22,11 @@ namespace MultipleWindow
         public string HideRootWindowClassName { get; set; }
         public string HideRootWindowText { get; set; }
 
+        public int overtop { get; set; }
+        public int overbottom { get; set; }
+        public int overleft { get; set; }
+        public int overright { get; set; }
+
         private Process process = null;
         public DockWindow()
         {
@@ -29,13 +34,29 @@ namespace MultipleWindow
             CloseButton = false;
             CloseButtonVisible = false;
         }
-        public DockWindow(string cmd, string cmdArg, string className, string hideRootWindowClassName, string hideRootWindowText) :base()
+        public DockWindow(
+            string cmd,
+            string cmdArg,
+            string className,
+            string hideRootWindowClassName,
+            string hideRootWindowText,
+            int overtop = 30,
+            int overbottom = 8,
+            int overleft = 8,
+            int overright = 8
+            ) :base()
         {
             this.Cmd = cmd;
             this.CmdArg = cmdArg;
             this.ClassName = className;
             this.HideRootWindowClassName = hideRootWindowClassName;
             this.HideRootWindowText = hideRootWindowText;
+
+
+            this.overtop = overtop;
+            this.overbottom = overbottom;
+            this.overleft = overleft;
+            this.overright = overright;
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -66,7 +87,7 @@ namespace MultipleWindow
                 }
                 return after;
             });
-            ControlApplication main = new ControlApplication(null, mainpre, 30, 8, 8, 8);
+            ControlApplication main = new ControlApplication(null, mainpre, overtop, overbottom, overleft, overright);
             this.Controls.Add(main);
             main.Dock = DockStyle.Fill;
             main.OpenApplication(HideRootWindowClassName, HideRootWindowText);

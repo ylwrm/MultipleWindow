@@ -46,5 +46,17 @@ namespace MultipleWindow
 
         [XmlAttribute]
         public string HideRootWindowText { get; set; }
+
+
+
+
+        [XmlAttribute]
+        public int overtop { get; set; }
+        [XmlAttribute]
+        public int overbottom { get; set; }
+        [XmlAttribute]
+        public int overleft { get; set; }
+        [XmlAttribute]
+        public int overright { get; set; }
     }
 }
