@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace MultipleWindow
 {
-    public partial class DockWindow : DockContent
+    public partial class RangeWindow : DockContent
     {
         public string Cmd { get; set; }
         public string CmdArg { get; set; }
@@ -28,13 +28,13 @@ namespace MultipleWindow
         public int overright { get; set; }
 
         private Process process = null;
-        public DockWindow()
+        public RangeWindow()
         {
             InitializeComponent();
             CloseButton = false;
             CloseButtonVisible = false;
         }
-        public DockWindow(
+        public RangeWindow(
             string cmd,
             string cmdArg,
             string className,

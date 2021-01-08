@@ -54,7 +54,7 @@ namespace MultipleWindow
                 Layout layout = GetXmlObject<Layout>(layoutFile);
 
                 // for
-                Dictionary<string, DockWindow> windows = new Dictionary<string, DockWindow>();
+                Dictionary<string, RangeWindow> windows = new Dictionary<string, RangeWindow>();
                 foreach (var range in layout.Ranges)
                 {
                     try
@@ -63,7 +63,7 @@ namespace MultipleWindow
                         {
                             Enum.TryParse(range.DockState, out DockState dockState);
 
-                            DockWindow dockWindow4 = new DockWindow(
+                            RangeWindow dockWindow4 = new RangeWindow(
                                 range.Cmd,
                                 range.CmdArg,
                                 range.ClassName,
@@ -81,7 +81,7 @@ namespace MultipleWindow
                         {
                             if (windows.ContainsKey(range.Pane))
                             {
-                                DockWindow dockWindow = new DockWindow(
+                                RangeWindow dockWindow = new RangeWindow(
                                     range.Cmd,
                                     range.CmdArg,
                                     range.ClassName,

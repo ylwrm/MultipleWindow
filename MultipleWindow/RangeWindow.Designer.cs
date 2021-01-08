@@ -1,6 +1,6 @@
 ﻿namespace MultipleWindow
 {
-    partial class DockWindow
+    partial class RangeWindow
     {
         /// <summary> 
         /// Required designer variable.

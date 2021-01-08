@@ -56,11 +56,11 @@
     <Compile Include="ControlApplication.Designer.cs">
       <DependentUpon>ControlApplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="DockWindow.cs">
+    <Compile Include="RangeWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DockWindow.Designer.cs">
-      <DependentUpon>DockWindow.cs</DependentUpon>
+    <Compile Include="RangeWindow.Designer.cs">
+      <DependentUpon>RangeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Layout.cs" />
     <Compile Include="MainForm.cs">
@@ -72,8 +72,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win32Controls.cs" />
-    <EmbeddedResource Include="DockWindow.resx">
-      <DependentUpon>DockWindow.cs</DependentUpon>
+    <EmbeddedResource Include="RangeWindow.resx">
+      <DependentUpon>RangeWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
