@@ -20,13 +20,13 @@ namespace MultipleWindow
         [XmlAttribute]
         public string Name { get; set; }
         [XmlAttribute]
-        public DockState DockState { get; set; }
+        public string DockState { get; set; }
 
         [XmlAttribute]
         public string Pane { get; set; }
 
         [XmlAttribute]
-        public DockAlignment DockAlignment { get; set; }
+        public string DockAlignment { get; set; }
 
         [XmlAttribute]
         public double Proportion { get; set; }

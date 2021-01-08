@@ -59,8 +59,10 @@ namespace MultipleWindow
                 {
                     try
                     {
-                        if (range.DockState != DockState.Unknown)
+                        if (!string.IsNullOrWhiteSpace(range.DockState))
                         {
+                            Enum.TryParse(range.DockState, out DockState dockState);
+
                             DockWindow dockWindow4 = new DockWindow(
                                 range.Cmd,
                                 range.CmdArg,
@@ -68,7 +70,7 @@ namespace MultipleWindow
                                 range.HideRootWindowClassName,
                                 range.HideRootWindowText);
                             dockWindow4.Text = range.Name;
-                            dockWindow4.Show(dockPanel1, range.DockState);
+                            dockWindow4.Show(dockPanel1, dockState);
                             windows.Add(range.Name, dockWindow4);
                         }
                         else
@@ -88,7 +90,8 @@ namespace MultipleWindow
                                 }
                                 else
                                 {
-                                    dockWindow.Show(windows[range.Pane].Pane, range.DockAlignment, range.Proportion);
+                                    Enum.TryParse(range.DockAlignment, out DockAlignment dockAlignment);
+                                    dockWindow.Show(windows[range.Pane].Pane, dockAlignment, range.Proportion);
                                 }
                                 windows.Add(range.Name, dockWindow);
                             }

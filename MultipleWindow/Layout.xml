@@ -3,10 +3,8 @@
   <Ranges>
     <Range
       Name="R1"
+      
       DockState="DockBottom"
-      Pane=""
-      DockAlignment="Right"
-      Proportion="0"
     
       Cmd="WindowsFormsApp1.exe"
       CmdArg=""
@@ -17,7 +15,7 @@
     </Range>
     <Range
       Name="R1.1"
-      DockState="Unknown"
+      
       Pane="R1"
       DockAlignment="Right"
       Proportion="0.5"
@@ -31,10 +29,8 @@
     </Range>
     <Range
       Name="R2"
+      
       DockState="DockRight"
-      Pane=""
-      DockAlignment="Right"
-      Proportion="0"
     
       Cmd="WindowsFormsApp3.exe"
       CmdArg=""
