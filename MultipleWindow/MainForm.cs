@@ -65,7 +65,8 @@ namespace MultipleWindow
                                 range.Cmd,
                                 range.CmdArg,
                                 range.ClassName,
-                                range.HideRootWindowClassName);
+                                range.HideRootWindowClassName,
+                                range.HideRootWindowText);
                             dockWindow4.Text = range.Name;
                             dockWindow4.Show(dockPanel1, range.DockState);
                             windows.Add(range.Name, dockWindow4);
@@ -78,7 +79,8 @@ namespace MultipleWindow
                                     range.Cmd,
                                     range.CmdArg,
                                     range.ClassName,
-                                    range.HideRootWindowClassName);
+                                    range.HideRootWindowClassName,
+                                    range.HideRootWindowText);
                                 dockWindow.Text = range.Name;
                                 if (range.Proportion == 0)
                                 {

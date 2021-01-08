@@ -39,9 +39,12 @@ namespace MultipleWindow
         public string CmdArg { get; set; }
 
         [XmlAttribute]
+        public string ClassName { get; set; }
+
+        [XmlAttribute]
         public string HideRootWindowClassName { get; set; }
 
         [XmlAttribute]
-        public string ClassName { get; set; }
+        public string HideRootWindowText { get; set; }
     }
 }

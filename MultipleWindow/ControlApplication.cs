@@ -43,7 +43,7 @@ namespace MultipleWindow
             this.Predicate = Predicate;
             InitializeComponent();
         }
-        public void OpenApplication(string hideRootWindowClass = null)
+        public void OpenApplication(string hideRootWindowClass = null, string hideRootWindowText = null)
         {
             if (!string.IsNullOrWhiteSpace(CMD))
             {
@@ -64,12 +64,16 @@ namespace MultipleWindow
                     this.Window = window;
 
                     // hide form
-                    if (!string.IsNullOrWhiteSpace(hideRootWindowClass))
+                    if (!string.IsNullOrWhiteSpace(hideRootWindowClass) || !string.IsNullOrWhiteSpace(hideRootWindowText))
                     {
                         var root = window;
                         while (root != null)
                         {
-                            if (root.ClassName == hideRootWindowClass)
+                            if (
+                                (hideRootWindowClass == null || root.ClassName.Contains(hideRootWindowClass))
+                                &&
+                                (hideRootWindowText == null || root.Text.Contains(hideRootWindowText))
+                            )
                             {
                                 root.Visible = false;
                                 break;

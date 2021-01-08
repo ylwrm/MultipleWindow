@@ -10,8 +10,9 @@
     
       Cmd="WindowsFormsApp1.exe"
       CmdArg=""
-      ClassName="WindowsForms10.BUTTON.app.0.141b42a_r28_ad1"
-      HideRootWindowClassName=""
+      ClassName="WindowsForms10.BUTTON.app"
+      HideRootWindowClassName="WindowsForms10.Window.8.app"
+      HideRootWindowText="Form1"
     >
     </Range>
     <Range
@@ -23,8 +24,9 @@
     
       Cmd="WindowsFormsApp2.exe"
       CmdArg=""
-      ClassName="WindowsForms10.SysMonthCal32.app.0.141b42a_r14_ad1"
-      HideRootWindowClassName=""
+      ClassName="WindowsForms10.SysMonthCal32.app"
+      HideRootWindowClassName="WindowsForms10.Window.8.app"
+      HideRootWindowText="Form1"
     >
     </Range>
     <Range
@@ -36,8 +38,9 @@
     
       Cmd="WindowsFormsApp3.exe"
       CmdArg=""
-      ClassName="WindowsForms10.SysTreeView32.app.0.141b42a_r14_ad1"
-      HideRootWindowClassName=""
+      ClassName="WindowsForms10.SysTreeView32.app"
+      HideRootWindowClassName="WindowsForms10.Window.8.app"
+      HideRootWindowText="Form1"
     >
     </Range>
   </Ranges>
