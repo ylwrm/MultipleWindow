@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout
+      DockTopPortion="0.5"
+      DockRightPortion="0.5"
+      DockLeftPortion="0.5"
+      DockBottomPortion="0.5"
+  >
+  <Ranges>
+    <Range
+      Name="Creo"
+      
+      DockState="DockTop"
+    
+      Cmd="${CreoExe}"
+      CmdArg="${cd}Model\missile_four_wing.prt.3"
+      ClassName="PGLWindow"
+      UpLevel="19"
+      
+      overtop="0"
+      overbottom="0"
+      overleft="0"
+      overright="0"
+    >
+    </Range>
+    <Range
+      Name="Abaqus"
+      
+      Pane="Creo"
+      DockAlignment="Right"
+      Proportion="0.3"
+    
+      Cmd="${AbaqusExe}"
+      CmdArg="cae database=${cd}Model\erjiacang_asm\erjiacang_asm.odb noStartupDialog"
+      ClassName="FXTopWindow"
+      UpLevel="0"
+      
+      overtop="0"
+      overbottom="0"
+      overleft="0"
+      overright="0"
+    >
+    </Range>
+    <Range
+      Name="CFD-Post"
+      
+      DockState="DockTop"
+    
+      Cmd="${CFDPostExe}"
+      CmdArg=""
+      ClassName="Qt5QWindowIcon"
+      Title="CFD-Post"
+      UpLevel="0"
+      
+      overtop="0"
+      overbottom="0"
+      overleft="0"
+      overright="0"
+    >
+    </Range>
+  </Ranges>
+</Layout>

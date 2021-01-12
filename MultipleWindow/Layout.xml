@@ -11,7 +11,7 @@
       
       DockState="DockBottom"
     
-      Cmd="WindowsFormsApp1.exe"
+      Cmd="${cd}WindowsFormsApp1.exe"
       CmdArg=""
       ClassName="WindowsForms10.BUTTON.app"
       
@@ -28,7 +28,7 @@
       DockAlignment="Right"
       Proportion="0.5"
     
-      Cmd="WindowsFormsApp2.exe"
+      Cmd="${cd}WindowsFormsApp2.exe"
       CmdArg=""
       ClassName="WindowsForms10.SysMonthCal32.app"
     >
@@ -38,18 +38,18 @@
       
       DockState="DockRight"
     
-      Cmd="WindowsFormsApp3.exe"
+      Cmd="${cd}WindowsFormsApp3.exe"
       CmdArg=""
       ClassName="WindowsForms10.SysTreeView32.app"
     >
     </Range>
     <Range
-      Name="R3"
+      Name="Excel"
       
       DockState="DockRight"
     
-      Cmd="C:\Program Files\Microsoft Office\Office15\EXCEL.EXE"
-      CmdArg="C:\Users\Jerry\Desktop\sheetjs.xlsx"
+      Cmd="${ExcelExe}"
+      CmdArg="${cd}Model\sheetjs.xlsx"
       ClassName="XLMAIN"
       Title="Excel"
       UpLevel="0"
