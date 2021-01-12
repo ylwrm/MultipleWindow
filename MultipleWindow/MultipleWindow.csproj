@@ -114,6 +114,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LayoutZW.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Layout.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

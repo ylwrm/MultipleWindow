@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout
+      DockTopPortion="0.5"
+      DockRightPortion="0.5"
+      DockLeftPortion="0.5"
+      DockBottomPortion="0.5"
+  >
+  <Ranges>
+    <Range
+      Name="ZWSim"
+      
+      DockState="DockBottom"
+    
+      Cmd="D:\Program Files\ZWSOFT\ZWSim Structural 2021\ZWSim.exe"
+      CmdArg="D:\Program Files\ZWSOFT\ZWSim Structural 2021\languages\en_US\resource\Templates_MM.Z3"
+      ClassName="Qt5QWindowIcon"
+      Title="ZWSim Structural"
+      UpLevel="0"
+      
+      overtop="8"
+      overbottom="0"
+      overleft="0"
+      overright="0"
+    >
+    </Range>
+    <Range
+      Name="zw3d"
+      
+      DockState="DockTop"
+    
+      Cmd="D:\Program Files\ZWSOFT\ZW3D 2021\zw3d.exe"
+      CmdArg="D:\WorkSpace\Demo2\MultipleWindow\MultipleWindow\bin\Debug\Model\missile_four_wing1.Z3PRT"
+      ClassName="Qt5QWindowIcon"
+      Title="选择工具"
+      UpLevel="1"
+      
+      overtop="8"
+      overbottom="0"
+      overleft="0"
+      overright="0"
+    >
+    </Range>
+  </Ranges>
+</Layout>

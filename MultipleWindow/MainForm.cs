@@ -77,6 +77,7 @@ namespace MultipleWindow
                             RangeWindow dockWindow4 = new RangeWindow(
                                 range.Cmd,
                                 range.CmdArg,
+                                range.WorkingDirectory,
                                 range.ClassName,
                                 range.Title,
                                 range.UpLevel,
@@ -98,6 +99,7 @@ namespace MultipleWindow
                                 RangeWindow dockWindow = new RangeWindow(
                                     range.Cmd,
                                     range.CmdArg,
+                                    range.WorkingDirectory,
                                     range.ClassName,
                                     range.Title,
                                     range.UpLevel,

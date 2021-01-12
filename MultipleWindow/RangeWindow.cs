@@ -11,6 +11,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows;
 using System.Threading;
+using System.Collections;
 
 namespace MultipleWindow
 {
@@ -18,6 +19,7 @@ namespace MultipleWindow
     {
         public string Cmd { get; set; }
         public string CmdArg { get; set; }
+        public string WorkingDirectory { get; set; }
         public string ClassName { get; set; }
         public string Title { get; set; }
         public int UpLevel { get; set; }
@@ -40,6 +42,7 @@ namespace MultipleWindow
         public RangeWindow(
             string cmd,
             string cmdArg,
+            string workingDirectory,
             string className,
             string title,
             int upLevel,
@@ -50,10 +53,11 @@ namespace MultipleWindow
             int overleft = 8,
             int overright = 8,
             int sleep = 0
-            ) :base()
+            ) : base()
         {
             this.Cmd = cmd;
             this.CmdArg = cmdArg;
+            this.WorkingDirectory = workingDirectory;
             this.ClassName = className;
             this.Title = title;
             this.UpLevel = upLevel;
@@ -77,8 +81,20 @@ namespace MultipleWindow
             var now = DateTime.Now;
             try
             {
-                process = Process.Start(Cmd, CmdArg);
-                Thread.Sleep(sleep);
+                var evs = Environment.GetEnvironmentVariables();
+                foreach (DictionaryEntry ev in evs)
+                {
+                    Cmd = (Cmd ?? "").Replace("${" + ev.Key.ToString() + "}", ev.Value.ToString());
+                    CmdArg = (CmdArg ?? "").Replace("${" + ev.Key.ToString() + "}", ev.Value.ToString());
+                    WorkingDirectory = (WorkingDirectory ?? "").Replace("${" + ev.Key.ToString() + "}", ev.Value.ToString());
+                }
+                ProcessStartInfo psi = new ProcessStartInfo()
+                {
+                    WorkingDirectory = WorkingDirectory,
+                    FileName = Cmd,
+                    Arguments = CmdArg
+                };
+                process = Process.Start(psi);
             }
             catch (Exception)
             {

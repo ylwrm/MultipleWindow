@@ -49,6 +49,9 @@ namespace MultipleWindow
         public string Cmd { get; set; }
 
         [XmlAttribute]
+        public string WorkingDirectory { get; set; }
+
+        [XmlAttribute]
         public string CmdArg { get; set; }
 
         [XmlAttribute]
