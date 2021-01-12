@@ -19,6 +19,7 @@ namespace MultipleWindow
         public string Cmd { get; set; }
         public string CmdArg { get; set; }
         public string ClassName { get; set; }
+        public string Title { get; set; }
         public int UpLevel { get; set; }
         public string HideRootWindowClassName { get; set; }
         public string HideRootWindowText { get; set; }
@@ -40,6 +41,7 @@ namespace MultipleWindow
             string cmd,
             string cmdArg,
             string className,
+            string title,
             int upLevel,
             string hideRootWindowClassName,
             string hideRootWindowText,
@@ -53,6 +55,7 @@ namespace MultipleWindow
             this.Cmd = cmd;
             this.CmdArg = cmdArg;
             this.ClassName = className;
+            this.Title = title;
             this.UpLevel = upLevel;
             this.HideRootWindowClassName = hideRootWindowClassName;
             this.HideRootWindowText = hideRootWindowText;
@@ -88,7 +91,11 @@ namespace MultipleWindow
                 bool after = false;
                 try
                 {
-                    after = t.ClassName.Contains(ClassName) && t.Process.StartTime >= now;
+                    after = (
+                        (string.IsNullOrWhiteSpace(ClassName) || t.ClassName.Contains(ClassName)) &&
+                        (string.IsNullOrWhiteSpace(Title) || t.Text.Contains(Title))
+                    )
+                    && t.Process.StartTime >= now;
                 }
                 catch (Exception)
                 {

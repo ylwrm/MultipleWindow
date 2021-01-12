@@ -120,13 +120,24 @@ namespace MultipleWindow
         {
             if (Window != null)
             {
-                var handle = new Win32Window(this.Handle);
-                Window.Parent = handle;
+                Window.Parent = new Win32Window(this.Handle);
 
-                Window.Height = this.Height + overtop + overbottom;
-                Window.Width = this.Width + overleft + overright;
-                Window.Pos_X = this.Location.X - overleft;
-                Window.Pos_Y = this.Location.Y - overtop;
+                var h = this.Height + overtop + overbottom;
+                var w = this.Width + overleft + overright;
+                var x = this.Location.X - overleft;
+                var y = this.Location.Y - overtop;
+                if (
+                    h != Window.Height ||
+                    w != Window.Width ||
+                    x != Window.Pos_X ||
+                    y != Window.Pos_Y
+                    )
+                {
+                    Window.Height = this.Height + overtop + overbottom;
+                    Window.Width = this.Width + overleft + overright;
+                    Window.Pos_X = this.Location.X - overleft;
+                    Window.Pos_Y = this.Location.Y - overtop;
+                }
             }
         }
     }
