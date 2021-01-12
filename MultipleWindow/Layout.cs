@@ -12,6 +12,19 @@ namespace MultipleWindow
     /// </summary>
     public class Layout
     {
+        [XmlAttribute]
+        public double DockTopPortion { get; set; }
+
+        [XmlAttribute]
+        public double DockRightPortion { get; set; }
+
+        [XmlAttribute]
+        public double DockLeftPortion { get; set; }
+
+        [XmlAttribute]
+        public double DockBottomPortion { get; set; }
+        
+        [XmlArray]
         public List<Range> Ranges { get; set; }
     }
 
@@ -47,6 +60,11 @@ namespace MultipleWindow
         [XmlAttribute]
         public string HideRootWindowText { get; set; }
 
+        [XmlAttribute]
+        public int UpLevel { get; set; }
+
+        [XmlAttribute]
+        public int Sleep { get; set; }
 
 
 

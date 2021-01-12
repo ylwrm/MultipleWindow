@@ -33,13 +33,19 @@ namespace MultipleWindow
                 return null;
             }
         }
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            if (DesignMode)
+                return;
 
+        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             if (DesignMode)
                 return;
-
+            this.OnResize(EventArgs.Empty);
             try
             {
                 // layout config
@@ -52,6 +58,11 @@ namespace MultipleWindow
 
                 // layout
                 Layout layout = GetXmlObject<Layout>(layoutFile);
+
+                dockPanel1.DockTopPortion = layout.DockTopPortion;
+                dockPanel1.DockBottomPortion = layout.DockBottomPortion;
+                dockPanel1.DockRightPortion = layout.DockRightPortion;
+                dockPanel1.DockLeftPortion = layout.DockLeftPortion;
 
                 // for
                 Dictionary<string, RangeWindow> windows = new Dictionary<string, RangeWindow>();
@@ -67,12 +78,14 @@ namespace MultipleWindow
                                 range.Cmd,
                                 range.CmdArg,
                                 range.ClassName,
+                                range.UpLevel,
                                 range.HideRootWindowClassName,
                                 range.HideRootWindowText,
                                 range.overtop,
                                 range.overbottom,
                                 range.overleft,
-                                range.overright);
+                                range.overright,
+                                range.Sleep);
                             dockWindow4.Text = range.Name;
                             dockWindow4.Show(dockPanel1, dockState);
                             windows.Add(range.Name, dockWindow4);
@@ -85,12 +98,14 @@ namespace MultipleWindow
                                     range.Cmd,
                                     range.CmdArg,
                                     range.ClassName,
+                                    range.UpLevel,
                                     range.HideRootWindowClassName,
                                     range.HideRootWindowText,
                                     range.overtop,
                                     range.overbottom,
                                     range.overleft,
-                                    range.overright);
+                                    range.overright,
+                                    range.Sleep);
                                 dockWindow.Text = range.Name;
                                 if (range.Proportion == 0)
                                 {
@@ -104,6 +119,7 @@ namespace MultipleWindow
                                 windows.Add(range.Name, dockWindow);
                             }
                         }
+                        this.OnResize(EventArgs.Empty);
                     }
                     catch (Exception)
                     {

@@ -57,6 +57,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "AnyCompare";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dockPanel1)).EndInit();
             this.ResumeLayout(false);
 

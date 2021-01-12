@@ -13,6 +13,7 @@ namespace MultipleWindow
         [STAThread]
         static void Main()
         {
+            //MessageBox.Show("waiting");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

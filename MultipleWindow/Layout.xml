@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Layout>
+<Layout
+      DockTopPortion="0.5"
+      DockRightPortion="0.5"
+      DockLeftPortion="0.5"
+      DockBottomPortion="0.5"
+  >
   <Ranges>
     <Range
       Name="R1"

@@ -19,6 +19,7 @@ namespace MultipleWindow
         public string Cmd { get; set; }
         public string CmdArg { get; set; }
         public string ClassName { get; set; }
+        public int UpLevel { get; set; }
         public string HideRootWindowClassName { get; set; }
         public string HideRootWindowText { get; set; }
 
@@ -26,6 +27,7 @@ namespace MultipleWindow
         public int overbottom { get; set; }
         public int overleft { get; set; }
         public int overright { get; set; }
+        public int sleep { get; set; }
 
         private Process process = null;
         public RangeWindow()
@@ -38,17 +40,20 @@ namespace MultipleWindow
             string cmd,
             string cmdArg,
             string className,
+            int upLevel,
             string hideRootWindowClassName,
             string hideRootWindowText,
             int overtop = 30,
             int overbottom = 8,
             int overleft = 8,
-            int overright = 8
+            int overright = 8,
+            int sleep = 0
             ) :base()
         {
             this.Cmd = cmd;
             this.CmdArg = cmdArg;
             this.ClassName = className;
+            this.UpLevel = upLevel;
             this.HideRootWindowClassName = hideRootWindowClassName;
             this.HideRootWindowText = hideRootWindowText;
 
@@ -57,6 +62,8 @@ namespace MultipleWindow
             this.overbottom = overbottom;
             this.overleft = overleft;
             this.overright = overright;
+
+            this.sleep = sleep;
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -68,6 +75,7 @@ namespace MultipleWindow
             try
             {
                 process = Process.Start(Cmd, CmdArg);
+                Thread.Sleep(sleep);
             }
             catch (Exception)
             {
@@ -87,10 +95,10 @@ namespace MultipleWindow
                 }
                 return after;
             });
-            ControlApplication main = new ControlApplication(null, mainpre, overtop, overbottom, overleft, overright);
+            ControlApplication main = new ControlApplication(mainpre, overtop, overbottom, overleft, overright);
             this.Controls.Add(main);
             main.Dock = DockStyle.Fill;
-            main.OpenApplication(HideRootWindowClassName, HideRootWindowText);
+            main.OpenApplication(UpLevel);
             this.Disposed += DockWindow_Disposed;
         }
         protected override void OnClosing(CancelEventArgs e)
