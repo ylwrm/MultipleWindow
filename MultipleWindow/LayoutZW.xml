@@ -11,10 +11,10 @@
       
       DockState="DockBottom"
     
-      Cmd="D:\Program Files\ZWSOFT\ZWSim Structural 2021\ZWSim.exe"
-      CmdArg="D:\Program Files\ZWSOFT\ZWSim Structural 2021\languages\en_US\resource\Templates_MM.Z3"
+      Cmd="${ZWSimExe}"
+      CmdArg="${cd}Model\Templates_MM.Z3"
       ClassName="Qt5QWindowIcon"
-      Title="ZWSim Structural"
+      Title="中望结构仿真"
       UpLevel="0"
       
       overtop="8"
@@ -28,8 +28,8 @@
       
       DockState="DockTop"
     
-      Cmd="D:\Program Files\ZWSOFT\ZW3D 2021\zw3d.exe"
-      CmdArg="D:\WorkSpace\Demo2\MultipleWindow\MultipleWindow\bin\Debug\Model\missile_four_wing1.Z3PRT"
+      Cmd="${zw3dExe}"
+      CmdArg="${cd}Model\missile_four_wing1.Z3PRT"
       ClassName="Qt5QWindowIcon"
       Title="选择工具"
       UpLevel="1"
