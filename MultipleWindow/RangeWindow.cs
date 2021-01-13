@@ -137,6 +137,7 @@ namespace MultipleWindow
             }
             catch (Exception ex)
             {
+
             }
         }
     }

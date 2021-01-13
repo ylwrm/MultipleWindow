@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout
+      DockTopPortion="0.9"
+      DockRightPortion="0.5"
+      DockLeftPortion="0.5"
+      DockBottomPortion="0.1"
+  >
+  <Ranges>
+    <Range
+      Name="Excel1"
+      
+      DockState="DockTop"
+    
+      Cmd="${ExcelExe}"
+      CmdArg="/x ${cd}Model\sheet1.xlsx"
+      ClassName="XLMAIN"
+      Title="Excel"
+      UpLevel="0"
+    >
+    </Range>
+    <Range
+      Name="Excel2"
+      
+      Pane="Excel1"
+      DockAlignment="Right"
+      Proportion="0.6"
+    
+      Cmd="${ExcelExe}"
+      CmdArg="/x ${cd}Model\sheet2.xlsx"
+      ClassName="XLMAIN"
+      Title="Excel"
+      UpLevel="0"
+    >
+    </Range>
+  </Ranges>
+</Layout>
