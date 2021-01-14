@@ -31,7 +31,7 @@ namespace MultipleWindow
         public int overleft { get; set; }
         public int overright { get; set; }
         public int sleep { get; set; }
-
+        ControlApplication main;
         private Process process = null;
         public RangeWindow()
         {
@@ -71,7 +71,20 @@ namespace MultipleWindow
             this.overright = overright;
 
             this.sleep = sleep;
+
         }
+
+        private void ParentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                main.CloseApplication();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -118,27 +131,21 @@ namespace MultipleWindow
                 }
                 return after;
             });
-            ControlApplication main = new ControlApplication(mainpre, overtop, overbottom, overleft, overright);
+            main = new ControlApplication(mainpre, overtop, overbottom, overleft, overright);
             this.Controls.Add(main);
             main.Dock = DockStyle.Fill;
             main.OpenApplication(UpLevel);
-            this.Disposed += DockWindow_Disposed;
+            this.ParentForm.FormClosing += ParentForm_FormClosing;
         }
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            e.Cancel = true;
-            base.OnClosing(e);
-        }
-        private void DockWindow_Disposed(object sender, EventArgs e)
-        {
-            try
-            {
-                process.Kill();
-            }
-            catch (Exception ex)
-            {
+        //protected override void OnClosing(CancelEventArgs e)
+        //{
+        //    main.CloseApplication();
+        //    base.OnClosing(e);
+        //}
+        //protected override void OnFormClosing(FormClosingEventArgs e)
+        //{
+        //    base.OnFormClosing(e);
+        //}
 
-            }
-        }
     }
 }

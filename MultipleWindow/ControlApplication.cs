@@ -25,6 +25,8 @@ namespace MultipleWindow
         public Func<Win32Window, bool> Predicate { get; set; }
         public Win32Window Window { get; set; }
 
+        public Win32Window WindowOldParent { get; set; }
+
         public ControlApplication()
         {
             InitializeComponent();
@@ -40,6 +42,21 @@ namespace MultipleWindow
 
             this.Predicate = Predicate;
             InitializeComponent();
+        }
+        public void CloseApplication()
+        {
+            try
+            {
+                //Window.Parent = WindowOldParent;
+                Window.Process.CloseMainWindow();
+                Window.Process.Kill();
+                Window.Process.Dispose();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public void OpenApplication(int upLevel = 0)
         {
@@ -68,8 +85,8 @@ namespace MultipleWindow
                             break;
                         }
                     }
-
                     // use wanted
+                    WindowOldParent = window.Parent;
                     var handle = new Win32Window(this.Handle);
                     window.Parent = handle;
                     //while (true)
@@ -118,26 +135,32 @@ namespace MultipleWindow
 
         private void resize()
         {
-            if (Window != null)
+            try
             {
-                Window.Parent = new Win32Window(this.Handle);
-
-                var h = this.Height + overtop + overbottom;
-                var w = this.Width + overleft + overright;
-                var x = this.Location.X - overleft;
-                var y = this.Location.Y - overtop;
-                if (
-                    h != Window.Height ||
-                    w != Window.Width ||
-                    x != Window.Pos_X ||
-                    y != Window.Pos_Y
-                    )
+                if (Window != null)
                 {
-                    Window.Height = this.Height + overtop + overbottom;
-                    Window.Width = this.Width + overleft + overright;
-                    Window.Pos_X = this.Location.X - overleft;
-                    Window.Pos_Y = this.Location.Y - overtop;
+                    Window.Parent = new Win32Window(this.Handle);
+
+                    var h = this.Height + overtop + overbottom;
+                    var w = this.Width + overleft + overright;
+                    var x = this.Location.X - overleft;
+                    var y = this.Location.Y - overtop;
+                    if (
+                        h != Window.Height ||
+                        w != Window.Width ||
+                        x != Window.Pos_X ||
+                        y != Window.Pos_Y
+                        )
+                    {
+                        Window.Height = this.Height + overtop + overbottom;
+                        Window.Width = this.Width + overleft + overright;
+                        Window.Pos_X = this.Location.X - overleft;
+                        Window.Pos_Y = this.Location.Y - overtop;
+                    }
                 }
+            }
+            catch (Exception)
+            {
             }
         }
     }
