@@ -47,7 +47,13 @@ namespace MultipleWindow
         {
             try
             {
-                //Window.Parent = WindowOldParent;
+                try
+                {
+                    Window.Parent = WindowOldParent;
+                }
+                catch (Exception)
+                {
+                }
                 Window.Process.CloseMainWindow();
                 Window.Process.Kill();
                 Window.Process.Dispose();
